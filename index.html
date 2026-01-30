@@ -25,8 +25,9 @@
                         brand: {
                             dark: '#1A1816', // Dark charcoal/brown
                             earth: '#3C3830', // Deep earthy taupe
-                            gold: '#C6A87C', // Muted gold for accents
-                            cream: '#F5F5F0', // Off-white background
+                            teal: '#4A9B9B', // Teal from logo
+                            gold: '#D4A574', // Warm gold for accents
+                            cream: '#FAF9F6', // Soft cream background
                             sand: '#E8E6E1', // Slightly darker background
                         }
                     },
@@ -42,31 +43,33 @@
         /* Custom styles for form focus rings and specific UI elements if needed */
         .form-input:focus {
             outline: none;
-            border-color: #C6A87C;
-            box-shadow: 0 0 0 1px #C6A87C;
+            border-color: #4A9B9B;
+            box-shadow: 0 0 0 1px #4A9B9B;
         }
     </style>
 </head>
 
 <body class="bg-brand-cream text-brand-dark font-sans antialiased selection:bg-brand-gold selection:text-white">
 
-    <!-- Navigation (Simple) -->
-    <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
-        <a href="#" class="flex items-center">
-            <img src="https://travelessencemag.com/wp-content/uploads/2023/05/Travelessence-logo.png"
-                alt="Travel Essence Magazine" class="h-12 md:h-16 w-auto">
-        </a>
-        <a href="#contact-form"
-            class="hidden md:inline-block px-6 py-2 border border-brand-dark text-sm tracking-wide hover:bg-brand-dark hover:text-white transition-colors duration-300">
-            Partner With Us
-        </a>
+    <!-- Navigation -->
+    <nav class="w-full bg-white shadow-sm sticky top-0 z-50">
+        <div class="py-4 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
+            <a href="#" class="flex items-center">
+                <img src="https://travelessencemag.com/wp-content/uploads/2023/05/Travelessence-logo.png"
+                    alt="Travel Essence Magazine" class="h-10 md:h-14 w-auto">
+            </a>
+            <a href="#contact-form"
+                class="hidden md:inline-block px-6 py-3 bg-brand-dark text-white text-sm tracking-wide font-semibold hover:bg-brand-gold hover:text-brand-dark transition-colors duration-300">
+                Partner With Us
+            </a>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="relative pt-12 pb-24 px-6 md:pt-20 md:pb-32 lg:px-8 max-w-7xl mx-auto">
         <div class="max-w-4xl">
             <h1 class="font-serif text-5xl md:text-7xl leading-[1.1] font-medium mb-6 text-brand-dark">
-                Bringing the Soul of <span class="italic text-brand-earth">African Hospitality</span> to the World.
+                Bringing the Soul of <span class="italic text-brand-teal">African Hospitality</span> to the World.
             </h1>
             <p class="text-lg md:text-xl text-brand-earth/80 mb-10 max-w-2xl font-light leading-relaxed">
                 Connect your luxury lodge, camp, or hotel with a curated community of travelers and tastemakers. Through
@@ -74,11 +77,11 @@
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
                 <a href="#offers"
-                    class="px-8 py-4 bg-brand-dark text-white text-sm font-semibold tracking-widest uppercase hover:bg-brand-gold transition-colors duration-300 text-center">
+                    class="px-8 py-4 bg-brand-teal text-white text-sm font-semibold tracking-widest uppercase hover:bg-brand-dark transition-colors duration-300 text-center shadow-md">
                     Book Your Feature
                 </a>
                 <a href="#"
-                    class="px-8 py-4 border border-brand-earth/30 text-brand-dark text-sm font-semibold tracking-widest uppercase hover:border-brand-dark transition-colors duration-300 text-center">
+                    class="px-8 py-4 border-2 border-brand-teal text-brand-dark text-sm font-semibold tracking-widest uppercase hover:bg-brand-teal hover:text-white transition-colors duration-300 text-center">
                     Download Media Kit
                 </a>
             </div>
@@ -86,7 +89,7 @@
 
         <!-- Decorative subtle element -->
         <div
-            class="absolute top-0 right-0 -z-10 opacity-10 w-[400px] h-[400px] bg-brand-gold rounded-full blur-3xl filter">
+            class="absolute top-0 right-0 -z-10 opacity-10 w-[400px] h-[400px] bg-brand-teal rounded-full blur-3xl filter">
         </div>
     </header>
 
