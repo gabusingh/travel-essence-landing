@@ -4,9 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partner with Travel Essence Magazine - Share Your Story</title>
+
+    <!-- Primary Meta Tags -->
+    <title>Travel Essence Magazine - Luxury Hospitality Marketing for African & Middle Eastern Properties</title>
+    <meta name="title"
+        content="Travel Essence Magazine - Luxury Hospitality Marketing for African & Middle Eastern Properties">
     <meta name="description"
-        content="Showcase your luxury lodge, camp, or hotel to a global audience of tastemakers through Travel Essence Magazine's advertorials, newsletters, and docuseries.">
+        content="Showcase your luxury lodge, safari camp, or boutique hotel to affluent travelers. Featured advertorials, newsletter placements, and documentary-style content for premium properties in Africa and the Middle East.">
+    <meta name="keywords"
+        content="luxury hospitality marketing, African safari lodges, Middle East hotels, travel magazine advertising, luxury travel marketing, boutique hotel promotion, safari camp marketing, hotel advertorials, travel docuseries, luxury property marketing Africa, hospitality PR Africa, travel magazine features">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://travel-essence-landing.vercel.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://travel-essence-landing.vercel.app/">
+    <meta property="og:title"
+        content="Travel Essence Magazine - Luxury Hospitality Marketing for African & Middle Eastern Properties">
+    <meta property="og:description"
+        content="Showcase your luxury lodge, safari camp, or boutique hotel to affluent travelers. Featured advertorials, newsletter placements, and documentary-style content.">
+    <meta property="og:image" content="https://travelessencemag.com/wp-content/uploads/2023/05/Travelessence-logo.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Travel Essence Magazine">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://travel-essence-landing.vercel.app/">
+    <meta property="twitter:title" content="Travel Essence Magazine - Luxury Hospitality Marketing">
+    <meta property="twitter:description"
+        content="Showcase your luxury lodge, safari camp, or boutique hotel to affluent travelers through our magazine, newsletter, and docuseries.">
+    <meta property="twitter:image"
+        content="https://travelessencemag.com/wp-content/uploads/2023/05/Travelessence-logo.png">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="author" content="Travel Essence Magazine">
+    <meta name="geo.region" content="ZA">
+    <meta name="geo.placename" content="Africa">
+
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Travel Essence Magazine",
+      "url": "https://travel-essence-landing.vercel.app/",
+      "logo": "https://travelessencemag.com/wp-content/uploads/2023/05/Travelessence-logo.png",
+      "description": "Luxury travel magazine featuring premium hospitality properties in Africa and the Middle East",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "Yvonne@yournarratives.com",
+        "contactType": "Sales"
+      },
+      "areaServed": ["Africa", "Middle East"],
+      "sameAs": [
+        "https://travelessencemag.com"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Hospitality Marketing & PR",
+      "provider": {
+        "@type": "Organization",
+        "name": "Travel Essence Magazine"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Africa and Middle East"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Luxury Hotel Owners, Safari Lodge Operators, Boutique Property Managers"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Newsletter Advertisement",
+          "price": "100",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Advertorial Feature",
+          "price": "450",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -323,73 +414,243 @@
                 </p>
             </div>
 
-            <form class="bg-white p-8 md:p-12 shadow-lg border-t-4 border-brand-gold">
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label
-                            class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">Name</label>
-                        <input type="text"
-                            class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all"
-                            placeholder="Jane Doe">
+            <div id="formContainer">
+                <form id="contactForm" class="bg-white p-8 md:p-12 shadow-lg border-t-4 border-brand-teal">
+                    <!-- Success Message (hidden by default) -->
+                    <div id="successMessage" class="hidden mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p class="text-green-800 font-semibold">Thank you! We'll be in touch soon.</p>
+                        </div>
                     </div>
-                    <div>
-                        <label
-                            class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">Property/Brand
-                            Name</label>
-                        <input type="text"
-                            class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all"
-                            placeholder="The Savannah Lodge">
+
+                    <!-- Error Message (hidden by default) -->
+                    <div id="errorMessage" class="hidden mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <p class="text-red-800 font-semibold" id="errorText">Something went wrong. Please try again.
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="mb-6">
-                    <label
-                        class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">Website</label>
-                    <input type="url"
-                        class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all"
-                        placeholder="https://">
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label
-                            class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">Location</label>
-                        <input type="text"
-                            class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all"
-                            placeholder="City, Country">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">
+                                Name <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" name="name" id="name" required
+                                class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all"
+                                placeholder="Jane Doe">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">
+                                Email <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" name="email" id="email" required
+                                class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all"
+                                placeholder="jane@example.com">
+                        </div>
                     </div>
-                    <div>
-                        <label
-                            class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">Preferred
-                            Package</label>
-                        <select
-                            class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all cursor-pointer">
-                            <option>I'm not sure yet</option>
-                            <option>Advertorial Feature ($450+)</option>
-                            <option>Newsletter Ad ($100)</option>
-                            <option>Invite-Us-Over Review</option>
-                        </select>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">
+                                Property/Brand Name <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" name="propertyName" id="propertyName" required
+                                class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all"
+                                placeholder="The Savannah Lodge">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">
+                                Website
+                            </label>
+                            <input type="url" name="website" id="website"
+                                class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all"
+                                placeholder="https://">
+                        </div>
                     </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">
+                                Location
+                            </label>
+                            <input type="text" name="location" id="location"
+                                class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all"
+                                placeholder="City, Country">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">
+                                Preferred Package
+                            </label>
+                            <select name="package" id="package"
+                                class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all cursor-pointer">
+                                <option>I'm not sure yet</option>
+                                <option>Advertorial Feature ($450+)</option>
+                                <option>Newsletter Ad ($100)</option>
+                                <option>Invite-Us-Over Review</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">
+                            What would you like to promote?
+                        </label>
+                        <textarea name="message" id="message"
+                            class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all h-32"
+                            placeholder="Tell us about your new opening, a special offer, or your unique story..."></textarea>
+                    </div>
+
+                    <!-- Simple Math CAPTCHA -->
+                    <div
+                        class="mb-8 p-4 bg-brand-sand/30 border border-brand-earth/10 flex items-center justify-between">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-1">
+                                Spam Protection <span class="text-red-500">*</span>
+                            </label>
+                            <p class="text-sm text-brand-dark">What is <span id="captchaQuestion"
+                                    class="font-bold"></span>?</p>
+                        </div>
+                        <input type="number" id="captchaAnswer" required
+                            class="w-24 bg-white border border-brand-earth/20 p-3 text-brand-dark form-input transition-all"
+                            placeholder="?">
+                    </div>
+
+                    <button type="submit" id="submitBtn"
+                        class="w-full bg-brand-teal text-white py-4 font-semibold uppercase tracking-[0.2em] text-sm hover:bg-brand-dark transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <span id="submitText">Submit Inquiry</span>
+                        <span id="loadingText" class="hidden">
+                            <svg class="animate-spin inline-block w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4">
+                                </circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                            Sending...
+                        </span>
+                    </button>
+
+                    <p class="text-center mt-6 text-xs text-brand-earth/60">
+                        Prefer direct email? Contact us at <a href="mailto:Yvonne@yournarratives.com"
+                            class="underline hover:text-brand-dark">Yvonne@yournarratives.com</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Enhanced Success Message State -->
+            <div id="successState"
+                class="hidden bg-white p-12 md:p-20 shadow-lg border-t-4 border-brand-teal text-center">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
                 </div>
-
-                <div class="mb-8">
-                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-earth/70 mb-2">What would
-                        you like to promote?</label>
-                    <textarea
-                        class="w-full bg-brand-cream/50 border border-brand-earth/20 p-3 text-brand-dark form-input transition-all h-32"
-                        placeholder="Tell us about your new opening, a special offer, or your unique story..."></textarea>
-                </div>
-
-                <button type="submit"
-                    class="w-full bg-brand-dark text-white py-4 font-semibold uppercase tracking-[0.2em] text-sm hover:bg-brand-gold transition-colors duration-300">
-                    Submit Inquiry
-                </button>
-
-                <p class="text-center mt-6 text-xs text-brand-earth/60">
-                    Prefer direct email? Contact us at <a href="mailto:Yvonne@yournarratives.com"
-                        class="underline hover:text-brand-dark">Yvonne@yournarratives.com</a>
+                <h3 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Thank You!</h3>
+                <p class="text-brand-earth text-lg mb-8 max-w-md mx-auto">
+                    Your inquiry has been received. Our team will review your property and get back to you shortly to
+                    discuss how we can tell your story.
                 </p>
-            </form>
+                <button onclick="window.location.reload()"
+                    class="text-brand-teal font-bold uppercase tracking-widest text-sm hover:text-brand-dark transition-colors">
+                    Send another inquiry
+                </button>
+            </div>
+
+            <script>
+                // Generate simple math captcha
+                let num1 = Math.floor(Math.random() * 10) + 1;
+                let num2 = Math.floor(Math.random() * 10) + 1;
+                let correctAnswer = num1 + num2;
+                document.getElementById('captchaQuestion').textContent = `${num1} + ${num2}`;
+
+                document.getElementById('contactForm').addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    const submitBtn = document.getElementById('submitBtn');
+                    const submitText = document.getElementById('submitText');
+                    const loadingText = document.getElementById('loadingText');
+                    const formContainer = document.getElementById('formContainer');
+                    const successState = document.getElementById('successState');
+                    const errorMessage = document.getElementById('errorMessage');
+                    const errorText = document.getElementById('errorText');
+                    const userCaptcha = parseInt(document.getElementById('captchaAnswer').value);
+
+                    if (userCaptcha !== correctAnswer) {
+                        errorText.textContent = 'Incorrect captcha answer. Please try again.';
+                        errorMessage.classList.remove('hidden');
+                        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        return;
+                    }
+
+                    // Hide any previous messages
+                    errorMessage.classList.add('hidden');
+
+                    // Show loading state
+                    submitBtn.disabled = true;
+                    submitText.classList.add('hidden');
+                    loadingText.classList.remove('hidden');
+
+                    // Collect form data
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        propertyName: document.getElementById('propertyName').value,
+                        website: document.getElementById('website').value,
+                        location: document.getElementById('location').value,
+                        package: document.getElementById('package').value,
+                        message: document.getElementById('message').value,
+                        captcha: userCaptcha,
+                        captchaExpected: correctAnswer
+                    };
+
+                    try {
+                        const response = await fetch('/api/submit-form', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(formData)
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok) {
+                            // Show success state and hide form
+                            formContainer.classList.add('hidden');
+                            successState.classList.remove('hidden');
+                            successState.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        } else {
+                            // Show error message
+                            errorText.textContent = result.error || 'Something went wrong. Please try again.';
+                            errorMessage.classList.remove('hidden');
+                            errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        errorText.textContent = 'Network error. Please check your connection and try again.';
+                        errorMessage.classList.remove('hidden');
+                        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } finally {
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        submitText.classList.remove('hidden');
+                        loadingText.classList.add('hidden');
+                    }
+                });
+            </script>
         </div>
     </section>
 
@@ -397,7 +658,7 @@
     <footer class="bg-brand-dark text-brand-cream/40 py-12 px-6 text-center text-xs tracking-widest uppercase">
         <div class="mb-6 font-serif text-xl text-brand-cream/20 normal-case tracking-normal italic">Travel Essence
             Magazine</div>
-        <p>&copy; 2026 Travel Essence. All rights reserved.</p>
+        <p>&copy; 2026 Travel Essence Magazine. All rights reserved.</p>
     </footer>
 
 </body>
