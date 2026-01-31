@@ -1,0 +1,15 @@
+{
+    "name": "travel-essence-landing",
+    "version": "1.0.0",
+    "description": "Travel Essence Magazine Landing Page",
+    "main": "api/submit-form.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "@sendgrid/mail": "^8.1.0"
+    },
+    "engines": {
+        "node": "20.x"
+    }
+}
