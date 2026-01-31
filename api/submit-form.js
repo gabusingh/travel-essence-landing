@@ -46,14 +46,16 @@ export default async function handler(req, res) {
       message: message || ''
     };
 
-    // If Google Sheets API is configured, send data there
-    if (process.env.GOOGLE_SHEETS_URL) {
-      await fetch(process.env.GOOGLE_SHEETS_URL, {
+    // If Google Sheets API is configured or use provided SheetDB URL
+    const sheetUrl = process.env.GOOGLE_SHEETS_URL || 'https://sheetdb.io/api/v1/onun5yeic9qew';
+    
+    if (sheetUrl) {
+      await fetch(sheetUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ data: [formData] })
       });
     }
 
