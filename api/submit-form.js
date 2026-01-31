@@ -50,13 +50,29 @@ export default async function handler(req, res) {
     const sheetUrl = process.env.GOOGLE_SHEETS_URL || 'https://sheetdb.io/api/v1/onun5yeic9qew';
     
     if (sheetUrl) {
-      await fetch(sheetUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ data: [formData] })
-      });
+      console.log('Attempting to send data to SheetDB:', sheetUrl);
+      try {
+        const sheetResponse = await fetch(sheetUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({ data: [formData] })
+        });
+        
+        const sheetResult = await sheetResponse.json();
+        console.log('SheetDB Response Status:', sheetResponse.status);
+        console.log('SheetDB Response Data:', JSON.stringify(sheetResult));
+        
+        if (!sheetResponse.ok) {
+          throw new Error(`SheetDB Error: ${sheetResponse.statusText}`);
+        }
+      } catch (sheetError) {
+        console.error('Failed to save to Google Sheets:', sheetError);
+        // We continue anyway so the user gets a success message if email worked, 
+        // but we log the error for the developer.
+      }
     }
 
     // Send email notification if configured
