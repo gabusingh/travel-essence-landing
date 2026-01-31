@@ -49,7 +49,7 @@ export default async function handler(req, res) {
     };
 
     // 1. Save to Google Sheets via SheetDB
-    const sheetUrl = process.env.GOOGLE_SHEETS_URL || 'https://sheetdb.io/api/v1/onun5yeic9qew';
+    const sheetUrl = process.env.GOOGLE_SHEETS_URL || 'https://sheetdb.io/api/v1/v9402em60pcmb';
     let sheetSuccess = false;
     let sheetErrorLog = null;
     
