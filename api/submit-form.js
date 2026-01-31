@@ -1,4 +1,5 @@
 const sgMail = require('@sendgrid/mail');
+const axios = require('axios');
 
 export default async function handler(req, res) {
   // Set CORS headers
@@ -50,33 +51,41 @@ export default async function handler(req, res) {
     // 1. Save to Google Sheets via SheetDB
     const sheetUrl = process.env.GOOGLE_SHEETS_URL || 'https://sheetdb.io/api/v1/onun5yeic9qew';
     let sheetSuccess = false;
+    let sheetErrorLog = null;
     
     if (sheetUrl) {
       try {
-        const sheetResponse = await fetch(sheetUrl, {
-          method: 'POST',
+        const sheetResponse = await axios.post(sheetUrl, {
+          data: [formData]
+        }, {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          body: JSON.stringify({ data: [formData] })
+          timeout: 5000 // 5 second timeout
         });
         
-        const sheetResult = await sheetResponse.json();
-        
-        if (sheetResponse.ok) {
+        if (sheetResponse.status >= 200 && sheetResponse.status < 300) {
           sheetSuccess = true;
-          console.log('Successfully saved to Google Sheets');
+          console.log('Successfully saved to Google Sheets via axios');
         } else {
-          console.error('SheetDB Error:', sheetResponse.status, sheetResult);
+          console.error('SheetDB Non-Success Status:', sheetResponse.status, sheetResponse.data);
+          sheetErrorLog = `Status: ${sheetResponse.status}`;
         }
       } catch (sheetError) {
-        console.error('Failed to connect to SheetDB:', sheetError);
+        console.error('Axios SheetDB Error:', sheetError.message);
+        if (sheetError.response) {
+          console.error('SheetDB Error Details:', sheetError.response.data);
+          sheetErrorLog = JSON.stringify(sheetError.response.data);
+        } else {
+          sheetErrorLog = sheetError.message;
+        }
       }
     }
 
     // 2. Send email notification if configured
     let emailSuccess = false;
+    let emailErrorLog = null;
     if (process.env.NOTIFICATION_EMAIL && process.env.SENDGRID_API_KEY) {
       try {
         sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -101,25 +110,38 @@ export default async function handler(req, res) {
         await sgMail.send(msg);
         emailSuccess = true;
       } catch (emailError) {
-        console.error('Failed to send email:', emailError);
+        console.error('Failed to send email:', emailError.message);
+        emailErrorLog = emailError.message;
       }
     }
 
-    // Log the submission
-    console.log('Submission processed:', { name, sheetSuccess, emailSuccess });
+    // Log the submission result
+    console.log('Submission Result:', { 
+      name, 
+      sheet: sheetSuccess ? 'SUCCESS' : 'FAILED', 
+      email: emailSuccess ? 'SUCCESS' : 'FAILED' 
+    });
 
-    // Return success response if at least one method succeeded
-    // Or return success anyway to keep UX smooth, but log failures.
+    // Return success to the user (since we don't want to block them if one part failed)
+    // but include debug info for us to see.
     return res.status(200).json({ 
       success: true, 
       message: 'Thank you! We have received your inquiry.',
-      debug: { sheet: sheetSuccess, email: emailSuccess }
+      debug: { 
+        sheet: sheetSuccess, 
+        email: emailSuccess,
+        errors: {
+          sheet: sheetErrorLog,
+          email: emailErrorLog
+        }
+      }
     });
 
   } catch (error) {
     console.error('Critical Form Error:', error);
     return res.status(500).json({ 
-      error: 'Failed to process submission. Please try again or email us directly.' 
+      error: 'Failed to process submission. Please try again or email us directly.',
+      detail: error.message
     });
   }
 }
